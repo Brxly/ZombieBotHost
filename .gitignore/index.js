@@ -3,14 +3,13 @@ const client = new Discord.Client();
 const { Client, RichEmbed } = require('discord.js');
 const fs = require('fs')
 const ascii = require('ascii-art') 
-const TOKEN = (process.env.TOKEN)
 const ytdl = require('ytdl-core');
 const queue = new Map();
 
 
 const prefix = "+";
 
-client.login(TOKEN)
+client.login(process.env.TOKEN)
 
 
 client.on('ready', () => {
