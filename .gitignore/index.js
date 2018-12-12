@@ -882,55 +882,7 @@ client.on('message', async message => {
                   message.channel.send(userembed);
           }
           
-          if (message.content.startsWith(prefix + `cat`))
-          {
-          
-              const { body } = await snek.get(`http://aws.random.cat/meow`);
-              
-              let embed = new Discord.RichEmbed()
-              .setColor(0xFFFFFF)
-              .setImage(body.file)
-              .setTitle(`Purr`)
-          
-              message.channel.send(embed);
-          }
-          
-          if (message.content.startsWith(prefix + "report")) {
-            let rUser = message.guild.member(message.mentions.users.first());
-            if(rUser.message.mentions.users.size === 0) {
-              return message.channel.send("**<:No:519493878085189653> Vous devez mentionnez une personne pour report !**")
-            }
-            var reason = message.content.split(' ').join(' ').slice(6);
-            let reportEmbed = new RichEmbed()
-            .setDescription("Report")
-            .setColor(0xFF0000)
-            .addField("User reporté", `${rUser} Avec l'ID ${rUser.id}` )
-            .addField("Reporté par", `${message.author} Avec l'ID ${message.author.id}`)
-            .addField("Channel", message.channel)
-            .addField("Reason", reason)
-            .setTimestamp()
-
-            let reportschannel = message.guild.channels.find(`report`)
-            if(!reportschannel) return message.channel.send("Je ne peut pas trouver le channel !")
-
-            reportschannel.send(reportEmbed)
-          }
-
-          
-          
-          if(message.content.startsWith(prefix + 'caca')) { //configurez votre prefix sinon ca va pas aller  ツ
-            if(message.author.id === "239739781238620160")  return message.channel.send("Vous ne pouvez pas utiliser la commande car vous ête banni du bot !")
-
-            
-          var blackembed = new Discord.RichEmbed() //un embed si tu sais pas ce que c'est ツ
-          .setColor("RANDOM")
-          .setTitle("Commande impossible à effectuer!")
-          .addField("Vous ne pouvez pas m'utiliser car vous êtes banni du bot!")
-          .setImage("http://www.parisenligne.com/wp-content/imgs/image-liste-noire-70.jpg")
-          message.channel.send(blackembed);
-        //vous pouvez en rajouter au fur et à mesure!
         
-          }
           
           });
         
